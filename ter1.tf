@@ -8,7 +8,6 @@ terraform {
 }
 
 provider "aws" {
-  profile = "default"
   region  = "us-east-1"
 }
 
@@ -86,7 +85,7 @@ resource "aws_route_table_association" "tf-r-subnet" {
 #ssh key pair
 resource "aws_key_pair" "tf-key" {
   key_name   = "tf-key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnjdkWxtsAZAkj9sSrcXmfESElMHqHdPROFF+LJZD9juF3E2TPdfY0Gg6foAwgZwOeHBhJWGd/xc5PEFG0tsRcCdXqdvkLKJYaKWyx6uVkMTRhHTKQoTF+Z3oTkUdaQXBtidhT8T5fQKgoiGrQwsts0gIIQUZOMo4ym/YQBXVKtUhP29O6dJrfTqOWCkFryzKeLorfcYEShqlyObdrXj0C+zTVs1Vp+x/ESKfeq8CRMU/m+zu+CqyCKFlMCHoTZa6XxxR2RT+JOoSTo0zvOx6O66M1PLY8Ze3LHjof4RVvw9S47Mkojur447tnazeRsBqijxLwLY6fLKYtzJmJ3Qp3 d00407449@desdemona"
   tags = {
     Name = "tf-key"
   }
